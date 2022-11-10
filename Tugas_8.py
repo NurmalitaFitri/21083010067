@@ -6,7 +6,6 @@ from multiprocessing import cpu_count, Pool, Process
 i=input("Masukkan bilangan\n")
 i=int(i)
 def hitung(i):
-  i+=1
   if (i%2) == 0:
      print(i, "Genap - ID Process", getpid())
   else:
@@ -22,7 +21,7 @@ for j in range(1, i+1):
 
 sekuensial_akhir = time()
 
-#multiprocess Class
+#multiprocess Process
 print ("\nmultiprocessing.Process")
 
 kumpulan_proses = []
@@ -33,12 +32,12 @@ for k in range(1, i+1):
     kumpulan_proses.append(p)
     p.start()
 
-for k in kumpulan_proses:
+for l in kumpulan_proses:
     p.join()
 
 proses_akhir = time()
 
-#Pool
+#Multiprocess Pool
 print ("\nmultiprocessing.Pool")
 
 pool_awal = time()
